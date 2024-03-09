@@ -8,6 +8,33 @@ class_name RaceCar
 @export var steering_pct : float = 0.0
 @export var throttle_pct : float = 0.0
 
+@export var raycasts : Array[RayCast3D]
+@onready var range: Node3D = $Range
+
+func read_ranges() -> Array[float]:
+	var ranges : Array[float]
+	ranges.resize(raycasts.size())
+	ranges.fill(0)
+	
+	for i in raycasts.size():
+		var d = raycasts[i].get_collision_point() - raycasts[i].global_position
+		ranges[i] = d.length()
+	
+	return ranges
+	
+func set_range_visibility(visible: bool):
+	range.visible = visible
+
+func reset(position: Node3D):
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+	
+	PhysicsServer3D.body_set_state(
+		get_rid(),
+		PhysicsServer3D.BODY_STATE_TRANSFORM,
+		position.global_transform
+	)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

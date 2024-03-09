@@ -30,6 +30,9 @@ func _ready():
 		wsUrl = url
 	else:
 		wsUrl = urlParam
+		
+func send(payload: PackedByteArray):
+	ws.send(payload)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -65,6 +68,10 @@ func _process(delta):
 			
 			disconnected.emit(code)
 			
+			var err = ws.connect_to_url(wsUrl)
+			if err:
+				printerr(err)
+		else:
 			var err = ws.connect_to_url(wsUrl)
 			if err:
 				printerr(err)

@@ -24,14 +24,7 @@ func switch_camera():
 		overhead_camera.make_current()
 
 func reset_car():
-	car.linear_velocity = Vector3.ZERO
-	car.angular_velocity = Vector3.ZERO
-	
-	PhysicsServer3D.body_set_state(
-		car.get_rid(),
-		PhysicsServer3D.BODY_STATE_TRANSFORM,
-		start_position.global_transform
-	)
+	car.reset(start_position)
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("switch_camera"):
