@@ -1,0 +1,14 @@
+2024-03-09 10:25:02
+
+[AB_L New Build](0.026)(325312):
+Project:FormulaG.lvproj
+Target:My Computer
+BuildSpec:
+OS:Windows 95/NT
+LabVIEW Version: 20.0.1
+
+[AB_L ProjectFileData](0.026)(325312):
+None
+
+[AB_L END](1.071)(325376):
+2024-03-09 10:25:03

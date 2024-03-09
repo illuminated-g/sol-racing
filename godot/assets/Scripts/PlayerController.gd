@@ -9,6 +9,12 @@ class_name PlayerController
 @export var chase_camera : Camera3D
 @export var overhead_camera : Camera3D
 
+var lap_start: int = 0
+var last_lap: int = -1
+
+func _onready():
+	lap_start = Time.get_ticks_msec()
+
 func set_camera(cam: int):	
 	if cam == 0:
 		chase_camera.make_current()
@@ -17,7 +23,6 @@ func set_camera(cam: int):
 
 func _on_ws_client_new_message(msg: PackedByteArray):
 	var id = msg.decode_u8(0)
-	print("id ", id)
 	
 	match (id):
 		1: #Reset Car
@@ -25,7 +30,6 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 			
 		2: #Request ranges
 			var ranges: Array[float] = car.read_ranges()
-			print(ranges)
 			
 			var payload = PackedByteArray()
 			payload.resize(ranges.size() * 4 + 1 + 4)
@@ -41,9 +45,6 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 		3: # Control car
 			var steering: float = msg.decode_float(1)
 			var throttle: float = msg.decode_float(5)
-			
-			print("steering ", steering)
-			print("throttle ", throttle)
 			
 			car.steering_pct = steering
 			car.throttle_pct = throttle
@@ -75,6 +76,23 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 		7: #Set pause
 			var pause: bool = msg.decode_u8(1) > 0
 			get_tree().paused = pause
+		
+		8: #Lap Timing
+			var payload = PackedByteArray()
+			payload.resize (16 + 1)
+			payload.encode_u8(0, 8) # time response
+			
+			var now: int = Time.get_ticks_msec()
+			payload.encode_s64(1, now - lap_start)
+			payload.encode_s64(9, last_lap)
+			ws.send(payload)
 
 func _on_ws_client_ready_state(ready_state):
 	print(ready_state)
+
+
+func _on_start_arch_car_passed(car: RaceCar):
+	var now: int = Time.get_ticks_msec()
+	last_lap = now - lap_start 
+	lap_start = now
+	print("Lap mS ", last_lap)
