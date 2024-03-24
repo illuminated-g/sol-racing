@@ -1,14 +1,14 @@
-2024-03-09 10:25:02
+2024-03-09 10:46:41
 
-[AB_L New Build](0.026)(325312):
+[AB_L New Build](0.094)(147712):
 Project:FormulaG.lvproj
 Target:My Computer
 BuildSpec:
 OS:Windows 95/NT
 LabVIEW Version: 20.0.1
 
-[AB_L ProjectFileData](0.026)(325312):
+[AB_L ProjectFileData](0.094)(147712):
 None
 
-[AB_L END](1.071)(325376):
-2024-03-09 10:25:03
+[AB_L END](1.183)(148160):
+2024-03-09 10:46:42

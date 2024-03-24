@@ -5,6 +5,5 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="FormulaG API.lvclass" Type="LVClass" URL="../FormulaG API/FormulaG API.lvclass"/>
-	<Item Name="FormulaG App.lvclass" Type="LVClass" URL="../FormulaLV App/FormulaG App.lvclass"/>
-	<Item Name="GodotHeaders.lvclass" Type="LVClass" URL="../GodotHeaders/GodotHeaders.lvclass"/>
+	<Item Name="FormulaG App.lvclass" Type="LVClass" URL="../FormulaG App/FormulaG App.lvclass"/>
 </Library>
