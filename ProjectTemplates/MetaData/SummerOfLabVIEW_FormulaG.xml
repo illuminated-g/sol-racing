@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
+<MetaData>
+  <ProjectTemplate>
+    <Title localize="yes">Summer of LabVIEW - FormulaG</Title>
+    <Description localize="yes">This project creates a new FormulaG entry with everything needed to get started implementing racecar driving logic.</Description>
+    <Filters localize="yes">Summer of LabVIEW</Filters>
+    <Keywords localize="yes">summer of labview;challenge;racing;formulag</Keywords>
+    <LocationPath>SummerOfLabVIEW/FormulaG</LocationPath>
+    <ProjectPath>template/FormulaG.lvproj</ProjectPath>
+    <ListboxImagePath>image/FormulaG.png</ListboxImagePath>
+    <SortPriority>250</SortPriority>
+	<HidePrefix>True</HidePrefix>
+	<HideIconOverlay>True</HideIconOverlay>
+  </ProjectTemplate>
+</MetaData>

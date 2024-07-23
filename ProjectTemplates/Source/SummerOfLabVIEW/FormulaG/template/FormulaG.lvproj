@@ -1,5 +1,6 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="20008000">
+	<Property Name="sol.formulag.version" Type="Str"></Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
@@ -11,9 +12,16 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Run Game.vi" Type="VI" URL="../Run Game.vi"/>
-		<Item Name="Car Control.vi" Type="VI" URL="../Car Control.vi"/>
+		<Item Name="FormulaG" Type="Folder">
+			<Item Name="webrace" Type="Folder" URL="../webrace">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="FormulaG-Common.lvlib" Type="Library" URL="../FormulaG-Common/FormulaG-Common.lvlib"/>
+			<Item Name="FormulaG.lvlib" Type="Library" URL="../FormulaG/FormulaG.lvlib"/>
+		</Item>
 		<Item Name="Instructions.txt" Type="Document" URL="../Instructions.txt"/>
+		<Item Name="Run Game.vi" Type="VI" URL="../Run Game.vi"/>
+		<Item Name="Controller.lvlib" Type="Library" URL="../Controller/Controller.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
@@ -88,9 +96,9 @@
 				<Item Name="2a8ab48044d2601e" Type="VI" URL="/&lt;vilib&gt;/sklein/WebView2/Libs/2a8ab48044d2601e"/>
 				<Item Name="Microsoft.Web.WebView2.Core.dll" Type="Document" URL="/&lt;vilib&gt;/sklein/WebView2/Libs/Microsoft.Web.WebView2.Core.dll"/>
 				<Item Name="Microsoft.Web.WebView2.WinForms.dll" Type="Document" URL="/&lt;vilib&gt;/sklein/WebView2/Libs/Microsoft.Web.WebView2.WinForms.dll"/>
+				<Item Name="Flatten to JSON.vim" Type="VI" URL="/&lt;vilib&gt;/IlluminatedG/lv-msg-simple/Stream-Simple-Msg/Flatten to JSON.vim"/>
+				<Item Name="Unflatten from JSON.vim" Type="VI" URL="/&lt;vilib&gt;/IlluminatedG/lv-msg-simple/Stream-Simple-Msg/Unflatten from JSON.vim"/>
 			</Item>
-			<Item Name="FormulaG-Common.lvlib" Type="Library" URL="../FormulaG-Common/FormulaG-Common.lvlib"/>
-			<Item Name="FormulaG.lvlib" Type="Library" URL="../FormulaG/FormulaG.lvlib"/>
 			<Item Name="mscorlib" Type="VI" URL="mscorlib">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -99,18 +107,18 @@
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="Zip Submission" Type="Zip File">
+			<Item Name="Submission Zip" Type="Zip File">
 				<Property Name="Absolute[0]" Type="Bool">false</Property>
-				<Property Name="BuildName" Type="Str">Zip Submission</Property>
+				<Property Name="BuildName" Type="Str">Submission Zip</Property>
 				<Property Name="Comments" Type="Str"></Property>
 				<Property Name="DestinationID[0]" Type="Str">{7DC25F2D-EB46-4C41-A2A1-D709B810E20B}</Property>
 				<Property Name="DestinationItemCount" Type="Int">1</Property>
 				<Property Name="DestinationName[0]" Type="Str">Destination Directory</Property>
 				<Property Name="IncludedItemCount" Type="Int">1</Property>
-				<Property Name="IncludedItems[0]" Type="Ref">/My Computer</Property>
-				<Property Name="IncludeProject" Type="Bool">true</Property>
-				<Property Name="Path[0]" Type="Path">../../builds/FormulaG/Zip Submission/FormulaG.zip</Property>
-				<Property Name="ZipBase" Type="Str">NI_zipbasedefault</Property>
+				<Property Name="IncludedItems[0]" Type="Ref">/My Computer/Controller.lvlib</Property>
+				<Property Name="IncludeProject" Type="Bool">false</Property>
+				<Property Name="Path[0]" Type="Path">../../builds/FormulaG/Submission Zip/FormulaG.zip</Property>
+				<Property Name="ZipBase" Type="Str">NI_zipbasevirtual</Property>
 			</Item>
 		</Item>
 	</Item>

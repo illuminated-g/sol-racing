@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='windows-1252' standalone='yes'?>
+<CategoryOverrides>
+
+    <Category>
+	<Name localize="yes">Summer of LabVIEW</Name>
+	<Priority>1000</Priority>
+	<NonLocalizedName>Summer of LabVIEW</NonLocalizedName>
+    </Category>
+
+</CategoryOverrides>
