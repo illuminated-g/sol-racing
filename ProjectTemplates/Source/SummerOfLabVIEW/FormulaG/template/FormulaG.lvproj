@@ -105,6 +105,8 @@
 			<Item Name="System.Web.Extensions" Type="Document" URL="System.Web.Extensions">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Read Ranges.vi" Type="VI" URL="../FormulaG/FormulaG API/Read Ranges.vi"/>
+			<Item Name="Read Time.vi" Type="VI" URL="../FormulaG/FormulaG API/Read Time.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Submission Zip" Type="Zip File">

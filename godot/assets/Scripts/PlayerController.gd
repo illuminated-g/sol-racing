@@ -28,20 +28,45 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 		1: #Reset Car
 			car.reset(start_position)
 			
-		2: #Request ranges
+		2: #Exchange State
+			#Apply sent control values
+			var steering: float = msg.decode_float(1)
+			var throttle: float = msg.decode_float(5)
+			
+			car.steering_pct = steering
+			car.throttle_pct = throttle
+			
+			#Build state response
 			var ranges: Array[float] = car.read_ranges()
+			var speed : float = car.linear_velocity.length()
+			var px : float = car.position.x
+			var pz : float = car.position.z
+			var ry : float = car.rotation_degrees.y
+			var now: int = Time.get_ticks_msec()
 			
 			var payload = PackedByteArray()
-			payload.resize(ranges.size() * 4 + 1 + 4)
+			
+			var rs = ranges.size()
+			# Ranges size + Info size + Time size
+			var size = (rs * 4 + 1 + 4) + (4 * 4 + 1) + 16
+			payload.resize(size)
 			payload.encode_u8(0, 2) # Range response
-			payload.encode_s32(1, ranges.size()) #prepend array size
+			payload.encode_s32(1, rs) #prepend array size
 			
 			var offset : int = 1 + 4
 			for i in ranges.size():
 				payload.encode_float(offset, ranges[i])
 				offset += 4
 			
+			payload.encode_float(offset, speed)
+			payload.encode_float(offset + 4, px)
+			payload.encode_float(offset + 8, pz)
+			payload.encode_float(offset + 12, ry)
+			payload.encode_s64(offset + 16, now - lap_start)
+			payload.encode_s64(offset + 24, last_lap)
+			
 			ws.send(payload)
+			
 		3: # Control car
 			var steering: float = msg.decode_float(1)
 			var throttle: float = msg.decode_float(5)
