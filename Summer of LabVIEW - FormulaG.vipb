@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-07-23 10:53:04" Modified_Date="2024-07-23 13:28:47" Creator="derri" Comments="" ID="a9cbe82a215b9dd6742d9afee36fe4ed">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-07-23 10:53:04" Modified_Date="2024-08-02 19:31:45" Creator="derri" Comments="" ID="4f3465e9988a7e7f308eb6fd516c2195">
   <Library_General_Settings>
     <Package_File_Name>IlluminatedG_lib_Summer_of_LabVIEW___FormulaG</Package_File_Name>
-    <Library_Version>1.0.0.4</Library_Version>
+    <Library_Version>1.1.0.7</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>..\vip</Library_Output_Folder>
@@ -39,7 +39,9 @@ You can check out an introduction video at https://www.youtube.com/watch?v=YOod-
       <Copyright/>
       <Packager>Derrick Bommarito</Packager>
       <URL>https://github.com/illuminated-g/sol-formulag</URL>
-      <Release_Notes/>
+      <Release_Notes>1.1.0.6
+- Optimized game engine comms for better rates
+- Add ability to run in external browser for those running in VMs</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
