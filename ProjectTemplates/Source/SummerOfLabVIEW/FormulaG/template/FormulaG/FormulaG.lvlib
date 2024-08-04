@@ -4,6 +4,13 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">536903680</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
+	<Item Name="Commands" Type="Folder">
+		<Item Name="Command.lvclass" Type="LVClass" URL="../Command/Command.lvclass"/>
+		<Item Name="Pause Cmd.lvclass" Type="LVClass" URL="../Pause Cmd/Pause Cmd.lvclass"/>
+		<Item Name="Reset Cmd.lvclass" Type="LVClass" URL="../Reset Cmd/Reset Cmd.lvclass"/>
+		<Item Name="Select Cam Cmd.lvclass" Type="LVClass" URL="../Select Cam Cmd/Select Cam Cmd.lvclass"/>
+		<Item Name="UI Options Cmd.lvclass" Type="LVClass" URL="../UI Options Cmd/UI Options Cmd.lvclass"/>
+	</Item>
 	<Item Name="FormulaG API.lvclass" Type="LVClass" URL="../FormulaG API/FormulaG API.lvclass"/>
 	<Item Name="FormulaG App.lvclass" Type="LVClass" URL="../FormulaG App/FormulaG App.lvclass"/>
 </Library>

@@ -65,7 +65,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.8267
 [node name="WSClient" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("3_tmspd")
-url = "ws://localhost/lv"
+url = "ws://127.0.0.1:10027/lv"
 
 [node name="PlayerController" type="Node" parent="." node_paths=PackedStringArray("car", "ws", "start_position", "chase_camera", "overhead_camera")]
 script = ExtResource("5_6dy7u")

@@ -9,11 +9,13 @@ class_name PlayerController
 @export var chase_camera : Camera3D
 @export var overhead_camera : Camera3D
 
-var lap_start: int = 0
+var timer_start: int = 0
+var timer_paused: int = 0
+var paused: bool = false
 var last_lap: int = -1
 
 func _onready():
-	lap_start = Time.get_ticks_msec()
+	timer_start = Time.get_ticks_msec()
 
 func set_camera(cam: int):	
 	if cam == 0:
@@ -21,12 +23,33 @@ func set_camera(cam: int):
 	elif cam == 1:
 		overhead_camera.make_current()
 
+func elapsed_time():
+	if paused:
+		return timer_paused
+	else:
+		return Time.get_ticks_msec() - timer_start + timer_paused
+		
+func start_timer():
+	if paused:
+		timer_start = Time.get_ticks_msec()
+		paused = false
+
+func pause_timer():
+	if not paused:
+		timer_paused = timer_paused + Time.get_ticks_msec() - timer_start
+		paused = true
+		
+func reset_timer():
+	timer_start = Time.get_ticks_msec()
+	timer_paused = 0
+
 func _on_ws_client_new_message(msg: PackedByteArray):
 	var id = msg.decode_u8(0)
 	
 	match (id):
 		1: #Reset Car
 			car.reset(start_position)
+			reset_timer()
 			
 		2: #Exchange State
 			#Apply sent control values
@@ -62,7 +85,7 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 			payload.encode_float(offset + 4, px)
 			payload.encode_float(offset + 8, pz)
 			payload.encode_float(offset + 12, ry)
-			payload.encode_s64(offset + 16, now - lap_start)
+			payload.encode_s64(offset + 16, elapsed_time())
 			payload.encode_s64(offset + 24, last_lap)
 			
 			ws.send(payload)
@@ -101,6 +124,10 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 		7: #Set pause
 			var pause: bool = msg.decode_u8(1) > 0
 			get_tree().paused = pause
+			if pause:
+				pause_timer()
+			else:
+				start_timer()
 		
 		8: #Lap Timing
 			var payload = PackedByteArray()
@@ -108,7 +135,7 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 			payload.encode_u8(0, 8) # time response
 			
 			var now: int = Time.get_ticks_msec()
-			payload.encode_s64(1, now - lap_start)
+			payload.encode_s64(1, elapsed_time())
 			payload.encode_s64(9, last_lap)
 			ws.send(payload)
 
@@ -118,6 +145,6 @@ func _on_ws_client_ready_state(ready_state):
 
 func _on_start_arch_car_passed(car: RaceCar):
 	var now: int = Time.get_ticks_msec()
-	last_lap = now - lap_start 
-	lap_start = now
+	last_lap = elapsed_time()
+	reset_timer()
 	print("Lap mS ", last_lap)
