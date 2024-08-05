@@ -36,6 +36,8 @@
 				<Item Name="Updater State.ctl" Type="VI" URL="../dev/Updater State.ctl"/>
 				<Item Name="Version to String.vi" Type="VI" URL="../dev/Version to String.vi"/>
 				<Item Name="Version.ctl" Type="VI" URL="../dev/Version.ctl"/>
+				<Item Name="Script Lap Counter.vi" Type="VI" URL="../ProjectTemplates/Source/SummerOfLabVIEW/FormulaG/template/FormulaG/FormulaG App/Script Lap Counter.vi"/>
+				<Item Name="Find Car Control VI.vi" Type="VI" URL="../ProjectTemplates/Source/SummerOfLabVIEW/FormulaG/template/FormulaG/FormulaG App/Find Car Control VI.vi"/>
 			</Item>
 			<Item Name="Version Scripting.vi" Type="VI" URL="../dev/Version Scripting.vi"/>
 		</Item>
@@ -66,6 +68,8 @@
 				<Item Name="GetRTHostConnectedProp.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetRTHostConnectedProp.vi"/>
 				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
+				<Item Name="LVNumericRepresentation.ctl" Type="VI" URL="/&lt;vilib&gt;/numeric/LVNumericRepresentation.ctl"/>
+				<Item Name="LVPointTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPointTypeDef.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
 				<Item Name="NI_XML.lvlib" Type="Library" URL="/&lt;vilib&gt;/xml/NI_XML.lvlib"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>

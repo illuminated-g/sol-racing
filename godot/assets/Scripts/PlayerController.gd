@@ -13,6 +13,7 @@ var timer_start: int = 0
 var timer_paused: int = 0
 var paused: bool = false
 var last_lap: int = -1
+var lap_number: int = 0
 
 func _onready():
 	timer_start = Time.get_ticks_msec()
@@ -50,6 +51,7 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 		1: #Reset Car
 			car.reset(start_position)
 			reset_timer()
+			lap_number = 0
 			
 		2: #Exchange State
 			#Apply sent control values
@@ -87,6 +89,7 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 			payload.encode_float(offset + 12, ry)
 			payload.encode_s64(offset + 16, elapsed_time())
 			payload.encode_s64(offset + 24, last_lap)
+			payload.encode_u8(offset + 32, lap_number)
 			
 			ws.send(payload)
 			
@@ -146,5 +149,8 @@ func _on_ws_client_ready_state(ready_state):
 func _on_start_arch_car_passed(car: RaceCar):
 	var now: int = Time.get_ticks_msec()
 	last_lap = elapsed_time()
+	lap_number += 1
+	if lap_number > 255:
+		lap_number = 255
 	reset_timer()
 	print("Lap mS ", last_lap)

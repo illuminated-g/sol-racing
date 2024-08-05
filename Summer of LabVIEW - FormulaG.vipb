@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-07-23 10:53:04" Modified_Date="2024-08-04 12:21:41" Creator="derri" Comments="" ID="28b2f7f27422eeb3fb4ce472c4ee3c36">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-07-23 10:53:04" Modified_Date="2024-08-04 18:10:14" Creator="derri" Comments="" ID="ff1bf91e5f095fc65576090838947873">
   <Library_General_Settings>
     <Package_File_Name>IlluminatedG_lib_Summer_of_LabVIEW___FormulaG</Package_File_Name>
-    <Library_Version>1.2.0.8</Library_Version>
+    <Library_Version>1.3.0.11</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>..\vip</Library_Output_Folder>
@@ -17,7 +17,7 @@
   </Library_General_Settings>
   <Advanced_Settings>
     <Package_Dependencies>
-      <Additional_External_Dependencies>illuminatedg_lib_ig_godotserver &gt;=1.0.0.3</Additional_External_Dependencies>
+      <Additional_External_Dependencies>illuminatedg_lib_ig_godotserver &gt;=1.2.0.7</Additional_External_Dependencies>
       <Additional_External_Dependencies>sklein_lib_webview2 &gt;=1.5.0.3</Additional_External_Dependencies>
     </Package_Dependencies>
     <Custom_Action_VIs>
@@ -33,13 +33,18 @@
       <One_Line_Description_Summary>Summer of LabVIEW racing challenge</One_Line_Description_Summary>
       <Description>FormulaG is a Summer of LabVIEW challenge where you implement the throttle and steering logic for a racecar on a closed track. A very basic example implementation is provided to be able to watch the game run right away. Then the objective is to make the logic better so it can drive faster and still navigate the course to achieve lower lap times.
 
+You can update existing projects with new capabilities and engine updates via Tools -&gt; Summer of LabVIEW -&gt; Update FormulaG...
+
 This package provides a Project Template available in the Create Project dialog in LabVIEW. The project will include everything you need to run right away and includes an Instructions.txt file for additional information.
 
 You can check out an introduction video at https://www.youtube.com/watch?v=YOod-_O7P1k which was recorded before the project was packaged as a project template but still shows off all of the key ideas in this challenge.</Description>
       <Copyright/>
       <Packager>Derrick Bommarito</Packager>
       <URL>https://github.com/illuminated-g/sol-formulag</URL>
-      <Release_Notes>1.2.0.7
+      <Release_Notes>1.3.0.10
+- Add Lap counter (Run Tools -&gt; Summer of LabVIEW -&gt; Update FormulaG Project to update existing project)
+
+1.2.0.7
 - Move all godot interactions into comms loop to prevent parallel access issues
 - Properly handle reset and pause timing
 
