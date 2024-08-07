@@ -24,7 +24,7 @@ func set_camera(cam: int):
 	elif cam == 1:
 		overhead_camera.make_current()
 
-func elapsed_time():
+func elapsed_time() -> int:
 	if paused:
 		return timer_paused
 	else:
@@ -68,12 +68,15 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 			var pz : float = car.position.z
 			var ry : float = car.rotation_degrees.y
 			var now: int = Time.get_ticks_msec()
+			var pause: int = 0
+			if paused:
+				pause = 1
 			
 			var payload = PackedByteArray()
 			
 			var rs = ranges.size()
 			# Ranges size + Info size + Time size
-			var size = (rs * 4 + 1 + 4) + (4 * 4 + 1) + 16
+			var size = (rs * 4 + 1 + 4) + (4 * 4 + 1) + 17
 			payload.resize(size)
 			payload.encode_u8(0, 2) # Range response
 			payload.encode_s32(1, rs) #prepend array size
@@ -90,6 +93,7 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 			payload.encode_s64(offset + 16, elapsed_time())
 			payload.encode_s64(offset + 24, last_lap)
 			payload.encode_u8(offset + 32, lap_number)
+			payload.encode_u8(offset + 33, pause)
 			
 			ws.send(payload)
 			
@@ -142,7 +146,9 @@ func _on_ws_client_new_message(msg: PackedByteArray):
 			payload.encode_s64(9, last_lap)
 			ws.send(payload)
 
-func _on_ws_client_ready_state(ready_state):
+func _on_ws_client_ready_state(ready_state: int):
+	paused = ready_state != 1 # 1 == Open
+	get_tree().paused = paused
 	print(ready_state)
 
 
