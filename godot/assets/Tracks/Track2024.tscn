@@ -1,0 +1,233 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmmpvyxswjcus"]
+
+[ext_resource type="PackedScene" uid="uid://bmm3nur60m2ea" path="res://assets/TrackScenes/TrackCornerLarger.tscn" id="1_ups1a"]
+[ext_resource type="PackedScene" uid="uid://ckki74r2gmo3k" path="res://assets/TrackScenes/TrackStraightLong.tscn" id="1_vmy8c"]
+
+[node name="Track1" type="Node3D"]
+
+[node name="TrackStraightLonger" parent="." instance=ExtResource("1_vmy8c")]
+
+[node name="TrackStraightLonger50" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 5)
+
+[node name="TrackStraightLonger21" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 26, 0, 12)
+
+[node name="TrackStraightLonger2" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="TrackStraightLonger33" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 7)
+
+[node name="TrackStraightLonger24" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 3)
+
+[node name="TrackStraightLonger4" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 11)
+
+[node name="TrackStraightLonger25" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6)
+
+[node name="TrackStraightLonger30" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 11)
+
+[node name="TrackStraightLonger31" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 11)
+
+[node name="TrackStraightLonger32" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 11)
+
+[node name="TrackStraightLonger27" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
+
+[node name="TrackStraightLonger28" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6)
+
+[node name="TrackStraightLonger29" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 6)
+
+[node name="TrackStraightLonger26" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+
+[node name="TrackStraightLonger23" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 6)
+
+[node name="TrackStraightLonger3" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="TrackStraightLonger6" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
+
+[node name="TrackStraightLonger17" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="TrackStraightLonger19" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="TrackStraightLonger20" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="TrackStraightLonger22" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="TrackStraightLonger7" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="TrackStraightLonger8" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -5)
+
+[node name="TrackStraightLonger9" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
+
+[node name="TrackStraightLonger10" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
+
+[node name="TrackStraightLonger34" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10)
+
+[node name="TrackStraightLonger35" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -10)
+
+[node name="TrackStraightLonger36" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+
+[node name="TrackStraightLonger37" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -10)
+
+[node name="TrackStraightLonger38" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10)
+
+[node name="TrackStraightLonger39" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -10)
+
+[node name="TrackStraightLonger40" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -10)
+
+[node name="TrackStraightLonger41" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10)
+
+[node name="TrackStraightLonger42" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="TrackStraightLonger43" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10)
+
+[node name="TrackStraightLonger44" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -10)
+
+[node name="TrackStraightLonger45" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10)
+
+[node name="TrackStraightLonger46" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="TrackStraightLonger47" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -10)
+
+[node name="TrackStraightLonger11" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="TrackStraightLonger48" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 16)
+
+[node name="TrackStraightLonger49" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
+
+[node name="TrackStraightLonger12" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
+
+[node name="TrackStraightLonger13" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 16)
+
+[node name="TrackStraightLonger14" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 16)
+
+[node name="TrackStraightLonger51" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 0, 2)
+
+[node name="TrackStraightLonger56" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 0, 0)
+
+[node name="TrackStraightLonger15" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="TrackStraightLonger18" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="TrackStraightLonger52" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 16)
+
+[node name="TrackStraightLonger16" parent="." instance=ExtResource("1_vmy8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 16)
+
+[node name="TrackCornerLarger13" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -5)
+
+[node name="TrackCornerLarger" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -5)
+
+[node name="TrackCornerLarger5" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -10)
+
+[node name="TrackCornerLarger21" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(4.80825e-07, 0, 1, 0, 1, 0, -1, 0, 4.80825e-07, 2, 0, 9)
+
+[node name="TrackCornerLarger14" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 14, 0, 1)
+
+[node name="TrackCornerLarger20" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 3, 0, 9)
+
+[node name="TrackCornerLarger2" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, -4)
+
+[node name="TrackCornerLarger11" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 12)
+
+[node name="TrackCornerLarger19" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26, 0, 2)
+
+[node name="TrackCornerLarger9" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8, 0, 17)
+
+[node name="TrackCornerLarger22" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 23, 0, 10)
+
+[node name="TrackCornerLarger23" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 20, 0, 7)
+
+[node name="TrackCornerLarger15" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 16, 0, 6)
+
+[node name="TrackCornerLarger16" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 0, 9)
+
+[node name="TrackCornerLarger12" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21, 0, -2)
+
+[node name="TrackCornerLarger3" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, -2)
+
+[node name="TrackCornerLarger6" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, -7)
+
+[node name="TrackCornerLarger24" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26, 0, 14)
+
+[node name="TrackCornerLarger17" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(3.05979e-07, 0, 1, 0, 1, 0, -1, 0, 3.05979e-07, 20, 0, -2)
+
+[node name="TrackCornerLarger8" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 23, 0, 9)
+
+[node name="TrackCornerLarger18" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(3.05979e-07, 0, 1, 0, 1, 0, -1, 0, 3.05979e-07, 5, 0, 14)
+
+[node name="TrackCornerLarger4" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -5, 0, -7)
+
+[node name="TrackCornerLarger10" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -3, 0, 3)
+
+[node name="TrackCornerLarger7" parent="." instance=ExtResource("1_ups1a")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 11, 0, -2)

@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://ljkde6xtfyke"]
+
+[ext_resource type="Script" path="res://assets/Scripts/ChaseCamera.gd" id="1_rde7y"]
+[ext_resource type="PackedScene" uid="uid://bmmpvyxswjcus" path="res://assets/Tracks/Track2024.tscn" id="2_a4ltd"]
+[ext_resource type="PackedScene" uid="uid://b63nqwto8p5l4" path="res://assets/Objects/start_arch.tscn" id="3_rg3a2"]
+[ext_resource type="Script" path="res://assets/Scripts/WebSocketClient.gd" id="4_pjr31"]
+[ext_resource type="Script" path="res://assets/Scripts/PlayerController.gd" id="5_emser"]
+[ext_resource type="PackedScene" uid="uid://bqqoko5u4pp6a" path="res://assets/Objects/car.tscn" id="6_sihfn"]
+
+[sub_resource type="Environment" id="Environment_k4ywn"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fkcn6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p3e0t"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ym3n3"]
+albedo_color = Color(0.254902, 0.627451, 0.415686, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2uf33"]
+points = PackedVector3Array(-25, -0.5, -25, -25, 0.5, -25, 25, -0.5, -25, -25, -0.5, 25, -25, 0.5, 25, 25, 0.5, -25, 25, -0.5, 25, 25, 0.5, 25)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ChaseCamera" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+top_level = true
+script = ExtResource("1_rde7y")
+target = NodePath("../Car")
+
+[node name="ChaseCamera" type="Camera3D" parent="ChaseCamera"]
+transform = Transform3D(-1, -4.37114e-08, 7.57104e-08, -3.2805e-10, 0.867895, 0.496747, -8.74222e-08, 0.496747, -0.867895, 0, 1.88367, -1.22009)
+current = true
+
+[node name="OverheadCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12, 20, 4)
+
+[node name="Track" parent="." instance=ExtResource("2_a4ltd")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k4ywn")
+camera_attributes = SubResource("CameraAttributesPractical_fkcn6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.890808, -0.21219, -0.401791, 0.454379, 0.415997, 0.787709, 0, -0.884263, 0.466989, 8.61732, 5.2878, 0)
+light_energy = 1.2
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51, 0)
+mesh = SubResource("BoxMesh_p3e0t")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ym3n3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("ConvexPolygonShape3D_2uf33")
+
+[node name="StartArch" parent="." instance=ExtResource("3_rg3a2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.82678, 0, -0.44273)
+
+[node name="WSClient" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("4_pjr31")
+url = "ws://127.0.0.1:10027/lv"
+
+[node name="PlayerController" type="Node" parent="." node_paths=PackedStringArray("car", "ws", "start_position", "chase_camera", "overhead_camera")]
+script = ExtResource("5_emser")
+car = NodePath("../Car")
+ws = NodePath("../WSClient")
+start_position = NodePath("../StartPosition")
+chase_camera = NodePath("../ChaseCamera/ChaseCamera")
+overhead_camera = NodePath("../OverheadCamera")
+
+[node name="Car" parent="." instance=ExtResource("6_sihfn")]
+steer_rate = 0.65
+
+[node name="StartPosition" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.75, 0.01, 0.511)
+
+[connection signal="car_passed" from="StartArch" to="PlayerController" method="_on_start_arch_car_passed"]
+[connection signal="new_message" from="WSClient" to="PlayerController" method="_on_ws_client_new_message"]
+[connection signal="ready_state" from="WSClient" to="PlayerController" method="_on_ws_client_ready_state"]
