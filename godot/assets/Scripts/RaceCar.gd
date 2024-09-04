@@ -9,6 +9,7 @@ class_name RaceCar
 @export var throttle_pct : float = 0.0
 
 @export var raycasts : Array[RayCast3D]
+@export var hits : Array[CSGSphere3D]
 @onready var range: Node3D = $Range
 
 func read_ranges() -> Array[float]:
@@ -17,8 +18,13 @@ func read_ranges() -> Array[float]:
 	ranges.fill(0)
 	
 	for i in raycasts.size():
-		var d = raycasts[i].get_collision_point() - raycasts[i].global_position
-		ranges[i] = d.length()
+		if (raycasts[i].is_colliding()):
+			var p = raycasts[i].get_collision_point()
+			var d = p - raycasts[i].global_position
+			#hits[i].global_position = p
+			ranges[i] = d.length()
+		else:
+			ranges[i] = 6
 	
 	return ranges
 	

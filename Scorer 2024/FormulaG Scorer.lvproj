@@ -21,7 +21,7 @@
 		</Item>
 		<Item Name="Instructions.txt" Type="Document" URL="../Instructions.txt"/>
 		<Item Name="Run Game.vi" Type="VI" URL="../Run Game.vi"/>
-		<Item Name="Controller.lvlib" Type="Library" URL="../Controller/Controller.lvlib"/>
+		<Item Name="Controller.lvlib" Type="Library" URL="../../../submissions/2024/FormulaG/1425/Controller.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
@@ -108,6 +108,7 @@
 				<Item Name="Sockets.lvlib" Type="Library" URL="/&lt;vilib&gt;/MediaMongrels Ltd/WebSockets/Sockets/Sockets.lvlib"/>
 				<Item Name="Stall Data Flow.vim" Type="VI" URL="/&lt;vilib&gt;/Utility/Stall Data Flow.vim"/>
 				<Item Name="Join Strings.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Join Strings.vi"/>
+				<Item Name="2a8ab48044d2601e" Type="VI" URL="/&lt;vilib&gt;/sklein/WebView2/Libs/2a8ab48044d2601e"/>
 			</Item>
 			<Item Name="mscorlib" Type="VI" URL="mscorlib">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>

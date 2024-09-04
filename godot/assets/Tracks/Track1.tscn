@@ -55,14 +55,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 14)
 [node name="TrackStraightLonger16" parent="." instance=ExtResource("1_jp8bw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 14)
 
-[node name="TrackCornerLarger" parent="." instance=ExtResource("2_hkqns")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
-
 [node name="TrackCornerLarger12" parent="." instance=ExtResource("2_hkqns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
 
 [node name="TrackCornerLarger5" parent="." instance=ExtResource("2_hkqns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 4)
+
+[node name="TrackCornerLarger5" parent="TrackCornerLarger5" instance=ExtResource("2_hkqns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -4)
 
 [node name="TrackStraightLonger4" parent="." instance=ExtResource("1_jp8bw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 3)
@@ -102,5 +102,3 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -3, 0, 3
 
 [node name="TrackCornerLarger7" parent="." instance=ExtResource("2_hkqns")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 21, 0, 12)
-
-[editable path="TrackCornerLarger"]
